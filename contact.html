@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #1b5e3c, #3e8463, #71c19d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 18px;
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header div {
+            cursor: pointer;
+        }
+
+        .icon {
+            width: 1.5em;
+            height: 1.5em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+            top: 1%;
+            left: 2%;
+        }
+
+        .contacts-list {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #3A3A67;
+            padding-bottom: 10px;
+        }
+
+        .contact-item img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .contact-name {
+            font-size: 18px;
+            flex-grow: 1;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: #3e8463;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            color: inherit;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .footer-icon img {
+            width: 30px;
+            height: 30px;
+            transition: all 0.3s;
+        }
+
+        .footer-icon.active {
+            background-color: #2e6f57;
+        }
+
+        .footer-icon.active img {
+            filter: brightness(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div id="login-button"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-a-teshuzuojiantou"></use>
+            </svg></div>
+        <div>联系人</div>
+        <div></div>
+    </div>
+
+    <div class="contacts-list">
+        <div class="contact-item">
+            <img src="./image/头像2.jpeg" alt="Contact 1">
+            <div class="contact-name">捷风</div>
+        </div>
+        <div class="contact-item">
+            <img src="./image/头像3.jpeg" alt="Contact 2">
+            <div class="contact-name">Marry</div>
+        </div>
+        <div class="contact-item">
+            <img src="./image/头像1.jpeg" alt="Contact 3">
+            <div class="contact-name">李华</div>
+        </div>
+        <div class="contact-item">
+            <img src="./image/头像4.jpeg" alt="Contact 4">
+            <div class="contact-name">Makabaka</div>
+        </div>
+        <!-- Add more contact items here -->
+    </div>
+
+    <div class="footer">
+        <a href="chat.html" class="footer-icon">
+            <img src="./image/消息.png" alt="消息图标">
+        </a>
+        <a href="contact.html" class="footer-icon active">
+            <img src="./image/联系人.png" alt="联系人图标">
+        </a>
+    </div>
+
+    <script src="./download (6)/font_rnp90fa13w/iconfont.js"></script>
+    <script>
+
+        document.getElementById('login-button').addEventListener('click', function (event) {
+            location.href = 'maobi.html';
+        });
+
+
+    </script>
+
+</body>
+
+
+</html>

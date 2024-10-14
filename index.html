@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妙笔生花</title>
+    <style>
+             @font-face {
+        font-family: "阿里妈妈刀隶体 Regular";
+        src: url('AlimamaDaoLiTi.ttf');
+        }
+        .text{
+            font-family:"阿里妈妈刀隶体 Regular" ;
+            font-size: 36px;
+        }
+    </style>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text" style="color: burlywood; border-radius: 25px;">妙</div>
+        <div class="text" style="background-color: burlywood; border-radius: 25px;">笔</div>
+        <div class="text">生</div>
+        <div class="text">花</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const texts = document.querySelectorAll('.text');
+            texts.forEach((text, index) => {
+                if (index >= 2) {
+                    text.classList.add('move');
+                }
+            });
+        }, 1000);
+        setTimeout(() => {
+            window.location.href = 'login1.html'; // 跳转到下一个HTML文件
+        }, 2000); // 2000毫秒后跳转
+    </script>
+
+</body>
+</html>

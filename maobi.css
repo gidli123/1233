@@ -1,0 +1,1037 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* 禁止滚动 */
+    height: 100%;
+    /* 让 body 填满整个屏幕 */
+}
+
+.file-input {
+    display: none;
+    /* 隐藏文件输入元素 */
+}
+
+/*结果表单*/
+.hidden {
+    display: none;
+}
+
+#scoreContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #62be9d;
+    padding: 20px;
+    border: 2px solid #272626;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    z-index: 1000;
+    width: 80%;
+    height: 200px;
+    max-width: 500px;
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.content-container {
+    overflow: hidden;
+    position: relative;
+    height: 80%;
+}
+
+#scoreTable th {
+    color: black;
+}
+
+#scoreTable td {
+    color: black;
+}
+
+#prevButton,
+#nextButton {
+    background-color: #758e61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+#closeButton {
+    background-color: #758e61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.page {
+    transition: transform 0.3s ease;
+}
+
+.page.hidden {
+    display: none;
+}
+
+.bar-chart-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.xinlizixunzhuanjia-scream {
+    background-color: #728663;
+}
+
+.xinlizixunzhuanjia-scream h5 {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+}
+
+.xinlizixunzhuanjia-scream table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    /* 合并边框 */
+}
+
+.xinlizixunzhuanjia-scream table tbody tr {
+    background-color: #f1f8f1;
+    /* 每一条记录的背景颜色 */
+    margin: 10px 0;
+    /* 每条记录之间的间隔 */
+}
+
+.xinlizixunzhuanjia-scream table tbody tr td {
+    padding: 10px;
+    border: 1px solid #c8e6c9;
+    /* 单元格边框 */
+}
+
+
+
+
+.picture-word {
+    height: 70px;
+    /* 调整按钮高度 */
+    width: 140px;
+    /* 调整按钮宽度 */
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 48px;
+    cursor: pointer;
+    position: absolute;
+    left: 60%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    font-family: "阿里妈妈刀隶体 Regular";
+    /* 垂直和水平居中 */
+}
+
+/*图片  */
+.buttonword {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 偏移自身宽高的一半 */
+    width: 100%;
+    /* 如果需要文本宽度与容器相同 */
+    text-align: center;
+    /* 水平居中 */
+
+}
+
+.spring {
+    height: 300px;
+    /* 调整按钮高度 */
+    width: 300px;
+    /* 调整按钮宽度 */
+    opacity: 0.7;
+    /* 设置透明度，范围是0到1 */
+    border-radius: 15px;
+    /* 设置圆角，值越大圆角越明显 */
+
+}
+
+.picture {
+    height: 70px;
+    /* 调整按钮高度 */
+    width: 180px;
+    /* 调整按钮宽度 */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    left: 25%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    /* 垂直和水平居中 */
+    background-color: rgba(209, 209, 209, 0.7);
+}
+
+.album {
+    height: 80px;
+    width: 60%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(240, 255, 255, 0.5);
+    /* 这里的0.8是透明度，可以根据需要调整 */
+}
+
+.messageContainer {
+    display: none;
+    position: absolute;
+    left: 30%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    background-color: antiquewhite;
+    z-index: 1;
+    float: left;
+}
+
+.icon-shufa {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
+
+.icon-huabi {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: black;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 95%;
+    left: 50%;
+}
+
+.icon-Halloween- {
+    width: 2.5em;
+    height: 2.5em;
+    vertical-align: -0.15em;
+    fill: black;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 1%;
+    left: 90%;
+}
+
+.icon-qing {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: rgb(252, 252, 252);
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 95%;
+    left: 20%;
+}
+
+.icon-xinlizixunzhuanjia {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: rgb(0, 0, 0);
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 95%;
+    left: 80%;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-items: center;
+    margin-top: 10px;
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    border: 2px solid #000000;
+    /* 添加边框 */
+    border-radius: 10px;
+    /* 圆角 */
+    padding: 10px;
+    /* 内边距 */
+}
+
+@font-face {
+    font-family: "阿里妈妈刀隶体 Regular";
+    src: url('AlimamaDaoLiTi.ttf');
+}
+
+.messageContainer {
+    display: none;
+    /* 默认不显示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    /* 设置背景色 */
+    border-radius: 10px;
+    /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 添加阴影 */
+    padding: 20px;
+    width: 250px;
+    /* 控制宽度 */
+    text-align: center;
+    z-index: 999;
+    /* 确保对话框显示在最前面 */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* 渐入渐出动画 */
+}
+
+.messageContainer.active {
+    display: block;
+    /* 显示对话框 */
+    opacity: 1;
+    /* 完全显示 */
+}
+
+.messageContainer.fade-out {
+    opacity: 0;
+    /* 设置为完全透明 */
+    transition: opacity 0.5s ease;
+    /* 渐出动画 */
+}
+
+.messageContainer p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.messageContainer button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.messageContainer button:hover {
+    background-color: #45a049;
+}
+
+.messageContainer button:active {
+    background-color: #388e3c;
+}
+
+.xinlizixunzhuanjia-scream,
+.Halloween-scream,
+.qing-scream {
+    display: none;
+    /* 默认隐藏其他页面内容 */
+}
+
+.xinlizixunzhuanjia-scream {
+    overflow-y: auto;
+    /* 启用垂直滚动条 */
+    height: 100vh;
+    /* 设置高度为视窗的高度 */
+    padding: 20px;
+    /* 设置内边距，避免内容过于紧贴 */
+    box-sizing: border-box;
+    /* 包括内边距在高度内 */
+}
+
+/* 头像部分 */
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    /* 调整间距 */
+    position: absolute;
+    /* 使头像区域绝对定位 */
+    top: -50%;
+    /* 头像距顶部15% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-container {
+    margin: 30px 0;
+    position: absolute;
+    /* 使日历区域绝对定位 */
+    bottom: 3%;
+    /* 日历距底部15% */
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-items: center;
+    margin-top: 10px;
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 5px;
+    /* 圆角 */
+    transition: background-color 0.3s, transform 0.3s;
+    /* 动画效果 */
+}
+
+.calendar div:hover {
+    transform: scale(1.1);
+    /* 鼠标悬停时放大 */
+}
+
+.signed {
+    color: white;
+
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    background-color: #eee;
+    cursor: pointer;
+    background-image: url('default-avatar.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.nickname {
+    margin-top: 56%;
+    /* 头像和昵称之间的间距 */
+    margin-bottom: 0px;
+    text-align: center;
+    /* 使昵称居中 */
+    white-space: nowrap;
+    /* 防止换行 */
+    font-size: 36px;
+    overflow: hidden;
+    /* 超出部分隐藏 */
+    text-overflow: ellipsis;
+    /* 使用省略号表示溢出文本 */
+    font-family: "阿里妈妈刀隶体 Regular";
+}
+
+/* 昵称编辑框样式 */
+.nickname-edit-container {
+    display: none;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 300px;
+    height: 80px;
+}
+
+.nickname-edit-container.active {
+    display: block;
+}
+
+.nickname-edit-container input {
+    padding: 10px;
+    width: 90%;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.nickname-edit-container button {
+    padding: 10px 20px;
+    width: 40%;
+    ;
+    background-color: #4CAF50;
+    position: absolute;
+    /* 设置绝对定位 */
+    top: 75%;
+    /* 垂直居中 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translate(-50%, -50%);
+    /* 使按钮中心对齐 */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+/* 备忘录容器样式 */
+.memo-container {
+    display: none;
+    position: fixed;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.memo-container.active {
+    display: block;
+}
+
+.memo-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.memo-container textarea {
+    width: 80%;
+    height: 100px;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.memo-container button {
+    padding: 10px;
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+/* 日历表格 */
+/* 日历容器 */
+.calendar-container {
+    width: 90%;
+    max-width: 400px;
+    height: 300px;
+    background: #fefefe;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    top: 100%;
+}
+
+/* 日历头部样式 */
+.calendar-header {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    width: 14.28%;
+    /* 每个格子占 1/7 宽度 */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+th {
+    color: #999;
+    font-weight: normal;
+}
+
+/* 高亮当前日期 */
+.today {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    border-radius: 20px;
+}
+
+/* 格子高亮（有事件） */
+.event-day {
+    background-color: lightblue;
+    border-radius: 20px;
+    color: #333;
+}
+
+/* 灰色不可用的日期 */
+.inactive {
+    color: #ddd;
+    border-radius: 20px;
+}
+
+.filled {
+    background-color: lightblue;
+    border-radius: 20px;
+}
+
+/* 全局文本样式 */
+p,
+button,
+input,
+textarea {
+    font-size: 16px;
+}
+
+/* 容器样式 */
+.xinlizixunzhuanjia-scream {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+/* 方块样式 */
+.moving-block {
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    position: absolute;
+    border-radius: 10px;
+    animation: moveBlock linear infinite;
+    cursor: pointer;
+}
+
+/* 方块移动的动画 */
+@keyframes moveBlock {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(200px, 200px);
+    }
+
+    /* 随便一个移动位置 */
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* 弹出信息的样式 */
+.message-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.message-popup p {
+    font-size: 18px;
+    color: #333;
+}
+
+.message-popup button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-popup button:hover {
+    background-color: #45a049;
+}
+
+
+/* 称号选择部分 */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+#titleSelect {
+    display: none;
+    margin-top: 1%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.current-title {
+    font-size: 14px;
+    color: #777;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+/* 统计信息样式 */
+.stats-container-dark {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 15px 0;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.stat-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.main-scream {
+    background-color: #728663;
+    /* 竹青色的十六进制代码 */
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.background1 {
+    top: 40%;
+    left: 30%;
+}
+
+.qing-scream {
+    width: 100%;
+    height: 100vh;
+
+    background: #f17340;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.filter-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.photo-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.teshuzuojiantou {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 1.5%;
+    left: 2%;
+}
+
+.title-shu {
+    position: absolute;
+    top: 1.5%;
+    left: 37%;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+    /* 确保标题在最上面 */
+}
+
+.xianxingaixin,
+.xianxingaixin1 {
+    width: 3em;
+    height: 3em;
+    vertical-align: -0.15em;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    cursor: pointer;
+    top: 40%;
+    left: 80%;
+}
+
+.xianxingaixin1 {
+    display: none;
+    /* 初始隐藏 */
+}
+
+/* 添加动画效果 */
+.fade-out {
+    animation: fadeOut 0.2s forwards;
+    /* 0.5秒的淡出动画 */
+}
+
+.fade-in {
+    animation: fadeIn 0.2s forwards;
+    /* 0.5秒的淡入动画 */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.xianxingfenxiang {
+    width: 3em;
+    height: 3em;
+    vertical-align: -0.15em;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 60%;
+    left: 80%;
+}
+
+.xianxingpinglun {
+    width: 3em;
+    height: 3em;
+    vertical-align: -0.15em;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    /* 确保图标在最上面 */
+    cursor: pointer;
+    /* 添加手型光标 */
+    top: 50%;
+    left: 80%;
+}
+
+.slide-in {
+    animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#back {
+    top: -95%;
+    position: absolute;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.photo-container {
+    height: 80%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    /* 确保内容不会超出边界 */
+    background-color: white;
+    /* 确保背景颜色 */
+    top: 5%;
+
+}
+
+#random-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 使图像填满容器 */
+}
+
+/* 仅允许特定页面滚动 */
+.xinlizixunzhuanjia-scream {
+    overflow-y: auto;
+    /* 允许上下滚动 */
+    max-height: 100vh;
+    /* 限制最大高度为视口高度 */
+}

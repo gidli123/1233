@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #1b5e3c, #3e8463, #71c19d);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 18px;
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header div {
+            cursor: pointer;
+        }
+
+        .recents {
+            padding: 10px;
+            display: flex;
+            overflow-x: auto;
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .recent-user {
+            margin-right: 15px;
+            text-align: center;
+        }
+
+        .recent-user img {
+            border-radius: 50%;
+            border: 2px solid orange;
+            width: 50px;
+            height: 50px;
+        }
+
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .online-status {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #22d1dd;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-sizing: content-box;
+        }
+
+        .chat-list {
+            padding: 0 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: top;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #3A3A67;
+            padding-bottom: 10px;
+        }
+
+        .chat-item img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .chat-text {
+            flex-grow: 1;
+        }
+
+        .chat-item strong {
+            display: block;
+        }
+
+        .chat-time {
+            margin-left: auto;
+            font-size: 14px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: #3e8463;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            color: inherit;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .footer-icon img {
+            width: 30px;
+            height: 30px;
+            transition: all 0.3s;
+        }
+
+        .footer-icon.active {
+            background-color: #2e6f57;
+        }
+
+        .footer-icon.active img {
+            filter: brightness(1);
+        }
+        .icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  top: 1%;
+  left: 2%;
+}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div id="login-button"><svg class="icon" aria-hidden="true" >
+            <use xlink:href="#icon-a-teshuzuojiantou"></use>
+          </svg></div>
+        <div>消息</div>
+        <div></div>
+    </div>
+    <h4 style="position: relative;margin: 10px 20px; width: 100%; left: 2%;">最近</h4>
+    <div class="recents">
+        <div class="recent-user">
+            <div class="avatar-container">
+                <img src="./image/头像1.jpeg" alt="用户1">
+                <span class="online-status"></span>
+            </div>
+            <p>李华</p>
+        </div>
+        <div class="recent-user">
+            <div class="avatar-container">
+                <img src="./image/头像2.jpeg" alt="用户2">
+                <span class="online-status"></span>
+            </div>
+            <p>捷风</p>
+        </div>
+        <div class="recent-user">
+            <div class="avatar-container">
+                <img src="./image/头像3.jpeg" alt="用户3">
+            </div>
+            <p>Marry</p>
+        </div>
+    </div>
+    <div class="chat-list">
+        <div class="chat-item">
+            <img src="./image/头像1.jpeg" alt="用户">
+            <div class="chat-text">
+                <strong>李华</strong>
+                你好吗？上周末的活动怎么样？
+            </div>
+            <div class="chat-time">10:20</div>
+        </div>
+        <div class="chat-item">
+            <img src="./image/头像2.jpeg" alt="用户">
+            <div class="chat-text">
+                <strong>捷风</strong>
+                嗯，非常好！
+            </div>
+            <div class="chat-time">10:20</div>
+        </div>
+        <div class="chat-item">
+            <img src="./image/头像3.jpeg" alt="用户">
+            <div class="chat-text">
+                <strong>Marry</strong>
+                活动是什么时候？
+            </div>
+            <div class="chat-time">10:20</div>
+        </div>
+        <div class="chat-item">
+            <img src="./image/头像4.jpeg" alt="用户">
+            <div class="chat-text">
+                <strong>Makabaka</strong>
+                是在周六，10月25号。
+            </div>
+            <div class="chat-time">10:20</div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="chat.html" class="footer-icon active">
+            <img src="./image/消息.png" alt="消息图标">
+        </a>
+        <a href="contact.html" class="footer-icon">
+            <img src="./image/联系人.png" alt="联系人图标">
+        </a>
+    </div>
+    <script src="./download (6)/font_rnp90fa13w/iconfont.js"></script>
+    <script>
+        
+        document.getElementById('login-button').addEventListener('click', function(event) {
+                    location.href = 'maobi.html';
+        });
+        
+        
+    </script>
+</body>
+
+</html>
