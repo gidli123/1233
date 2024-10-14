@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妙笔生花</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="text">妙</div>
+        <div class="text">笔</div>
+        <div class="text">生</div>
+        <div class="text">花</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const texts = document.querySelectorAll('.text');
+            texts.forEach((text, index) => {
+                if (index >= 2) {
+                    text.classList.add('move');
+                }
+            });
+        }, 1000);
+        setTimeout(() => {
+            window.location.href = 'login.html'; // 跳转到下一个HTML文件
+        }, 2000); // 2000毫秒后跳转
+    </script>
+
+</body>
+</html>

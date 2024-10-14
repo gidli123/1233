@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传图片与评分类表单</title>
+</head>
+
+<body>
+    <div class="album">
+        <input type="file" id="imageInputAlbum" accept="image/*">
+        <label for="imageInputAlbum">从相册选择</label>
+    </div>
+
+    <form id="scoreForm" style="display: none;">
+        <img id="uploadedImage" src="" alt="上传的图片" style="max-width: 300px; display:block; margin-bottom: 10px;">
+        <div id="resultContainer"></div>
+    </form>
+
+    <script>
+        document.getElementById('imageInputAlbum').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('uploadedImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+
+                const formData = new FormData();
+                formData.append('image', file);
+
+                fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            console.error('Error:', data.error);
+                            document.getElementById('scoreForm').style.display = 'none';
+                            return;
+                        }
+
+                        const resultContainer = document.getElementById('resultContainer');
+                        resultContainer.innerHTML = `
+                        <p>EI总分: ${data.EI总分}</p>
+                        <p>美观得分: ${data.美观得分}</p>
+                        <p>情绪得分: ${data.情绪得分}</p>
+                        <p>自控得分: ${data.自控得分}</p>   
+                        <p>情感得分: ${data.情感得分}</p>
+                        <p>社交得分: ${data.社交得分}</p>
+                    `;
+
+                        document.getElementById('scoreForm').style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById('scoreForm').style.display = 'none';
+                    });
+            }
+        });
+    </script>
+</body>
+
+</html>

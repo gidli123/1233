@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .icon-shufa {
+          width: 3em;
+          height: 3em;
+          vertical-align: -0.15em;
+          fill: currentColor;
+          overflow: hidden;
+          z-index: 10; /* 确保图标在最上面 */
+          cursor: pointer; /* 添加手型光标 */
+        }
+        </style>
+</head>
+<body>
+       <!-- 图标 -->
+       <svg class="icon-shufa" aria-hidden="true" id="shufa-icon">
+        <use xlink:href="#icon-shufa"></use>
+    </svg>
+    <!-- 消息和选项 -->
+    <div id="messageContainer" class="messageContainer" style="display: none;">
+        <p>今天你练字了吗？</p>
+        <button onclick="response('yes')">练了</button>
+        <button onclick="response('no')">没练</button>
+    </div>
+    <script src="./font/iconfont.js"></script>
+    <script>
+        document.getElementById('shufa-icon').addEventListener('click', showMessage);
+
+        function showMessage() {
+            console.log("图标被点击");
+            document.getElementById('messageContainer').style.display = 'block';
+        }
+
+        function response(answer) {
+            console.log("选择的答案:", answer);
+            const message = answer === 'yes' ? '祝你妙笔生花！' : '今天也要加油哦！';
+            alert(message);
+            document.getElementById('messageContainer').style.display = 'none'; // 隐藏选项
+        }
+    </script>
+</body>
+</html>

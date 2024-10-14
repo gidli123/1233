@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1726994605103') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shufa:before {
+  content: "\e506";
+}
+
+.icon-Halloween-:before {
+  content: "\e60b";
+}
+
+.icon-huabi:before {
+  content: "\e65e";
+}
+

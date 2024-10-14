@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2 style="text-align: center;">用户登录</h2>
+        <input type="text" id="userName" placeholder="用户名">
+        <input type="password" id="pwd" placeholder="密码">
+        <div class="button-container">
+            <button class="button-enter" id="login-button"><span class="enter-word">登录</span></button>
+            <button class="button-creat">注册</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', function (event) {
+            var userName = document.getElementById("userName").value;
+            var pwd = document.getElementById("pwd").value;
+            console.log(userName, pwd);
+
+            if (userName === 'admin' && pwd === '123456') {
+                location.href = 'maobi.html';
+            }else{
+                
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

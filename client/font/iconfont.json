@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3255056",
+      "name": "书法",
+      "font_class": "shufa",
+      "unicode": "e506",
+      "unicode_decimal": 58630
+    },
+    {
+      "icon_id": "8138966",
+      "name": "万圣节小人",
+      "font_class": "Halloween-",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "17874870",
+      "name": "画笔",
+      "font_class": "huabi",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    }
+  ]
+}
